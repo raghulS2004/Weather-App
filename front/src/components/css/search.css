@@ -1,0 +1,39 @@
+.search-bar{
+    background-color: #202B3B;
+    position: absolute;
+    top: 5vh;
+    left: 10vw;
+    border-radius: 10px;
+}
+.search-bar input{
+    color: white;
+    padding: 10px 15px;
+    width: 50vw;
+    background-color: #202B3B;
+    border: none;
+    height: 3vh;
+    border-radius: 10px;
+    font-family: "Roboto Flex",sans-serif;
+}
+.search-bar input:focus{
+    outline: none;
+}
+.search-bar input::placeholder{
+    color: white;
+}
+p{
+    color: aliceblue;
+}
+.search-term{
+    display: block;
+    width: 50vw;
+    background-color: #202B3B;
+    color: white;
+    border: none;
+    font-size: 1.2rem;
+    text-align: left;
+    margin: 5px 0;
+}
+.search-bar ul{
+    list-style: none;
+}

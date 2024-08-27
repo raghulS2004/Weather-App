@@ -1,0 +1,169 @@
+body{
+    overflow: hidden;
+}
+.main-container {
+    color: white;
+    margin: 8vh 1vw 15vh;
+    width: 50vw;
+    height: 16vh;
+    background-color: #0B131E;
+    padding: 0 30px;
+    display: flex;
+    flex-direction: row;
+
+}
+
+.lft {
+    width: 50%;
+}
+
+.degree {
+    font-size: 2.5rem;
+}
+
+.rgt {
+    width: 50%;
+
+}
+
+.rgt img {
+
+    float: right;
+    width: 50%;
+    color: white;
+}
+
+.middle-container {
+    font-family: "Roboto", sans-serif;
+    border-radius: 10px;
+    color: white;
+    margin: 2vh 1vw;
+    width: 52.5vw;
+    height: 18vh;
+    background-color: #202B3B;
+    padding: 15px 20px;
+
+}
+
+.middle-container p {
+    margin: 0;
+    color: white;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.forecast {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0;
+}
+
+.forecast-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.forecast-item .cvalue {
+    color: white;
+    font-size: 1.2rem;
+}
+
+
+.last-container {
+    border-radius: 10px;
+    color: white;
+    margin: 2vh 1vw 0;
+    width: 52.5vw;
+    height: 28vh;
+    background-color: #202B3B;
+    padding: 12px 20px;
+
+}
+
+.last-container p {
+    margin-top: 5px;
+    color: white;
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.wind-item .icon {
+    font-size: 2rem;
+    display: inline;
+    width: 1.2vw;
+}
+
+.wind-item .icon-content {
+    text-align: center;
+    width: 7vw;
+    display: block;
+}
+
+.wind-item .icon-content p {
+    margin: 10px 0;
+}
+
+.wind {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 2vh 2vw;
+}
+
+.wind-item {
+    display: flex;
+    width: 20vw;
+}
+
+
+.sidebar {
+    width: 23vw;
+    border-radius: 10px;
+    height: 83vh;
+    background-color: #202B3B;
+    margin: 5vh 0 0 4vw;
+    color: white;
+    padding: 20px;
+}
+
+.sidebar p {
+    margin-top: 5px;
+    color: white;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+.week{
+    margin: 25px 0;
+}
+.week-unit {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0;
+}
+
+.week-unit .condition {
+    width: 8vw;
+    height: 1vh;
+}
+
+.week-unit hr {
+    text-align: center;
+    width: 22vw;
+    margin: 15px 0;
+    border: 1px solid gray;
+}
+hr{
+    border: 1px solid grey;
+}
+h4{
+    color: gray;
+    margin: 0;
+}
