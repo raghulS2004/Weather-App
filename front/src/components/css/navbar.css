@@ -27,4 +27,8 @@ nav .svgt{
         height: 5vh;
         width: 95vw;
     }
+    nav .svgt{
+        width: 3.5vw;
+        margin: auto;
+    }
 }
