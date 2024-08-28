@@ -4,8 +4,22 @@ import { useNavigate } from "react-router-dom";
 import cityList from "./cityList.js";
 
 function Cities({setCity}) {
-
+  const [searchquery,setSearchQuery]=useState('');
+  const [filteredCities,setFilteredCities]=useState(cityList)
   const navigate=useNavigate();
+  function handleSearch(event){
+    const term=event.target.value;
+    setSearchQuery(term);
+    if (term === '') {
+      setFilteredCities(cityList);
+    } else {
+      setFilteredCities(
+        cityList.filter(city =>
+          city.toLowerCase().includes(term)
+        )
+      );
+  }
+}
   function handleCityClick(city) {
     setCity(city);
     navigate("/")
@@ -14,8 +28,14 @@ function Cities({setCity}) {
   return (
     <div className="city-list-container">
       <h1>City List</h1>
+      <input
+      className="search-city" type="text"
+      placeholder="Search for cities"
+      value={searchquery}
+      onChange={handleSearch} />
+      {filteredCities.length>0 &&(
       <ul>
-        {cityList.map((city, index) => (
+        {filteredCities.map((city, index) => (
           <li
             key={index}
             data-city={city}
@@ -24,7 +44,7 @@ function Cities({setCity}) {
             {city}
           </li>
         ))}
-      </ul>
+      </ul>)}
     </div>
   );
 }

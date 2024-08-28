@@ -1,51 +1,75 @@
 /* CityList.css */
-body{
-    overflow: auto;
+body {
+  overflow: auto;
 }
-.city-list-container {
-    background-color: #202B3B;
-    padding: 20px;
-    border-radius: 10px;
-    max-height: 10000vh;
-    width: 85vw;
-    margin: 2vh 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: auto;
-  }
-  
-  .city-list-container h1 {
-    text-align: center;
-    color: #fff;
-    font-family: Arial, sans-serif;
-  }
-  
-  .city-list-container ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-wrap: wrap;
-  }
-  
-  .city-list-container li {
 
-    background-color: #0B131E;
-    margin: 10px;
-    padding: 10px;
-    border-radius: 5px;
-    text-align: center;
-    font-size: 18px;
-    font-family: Arial, sans-serif;
-    color: #fff;
-    transition: background-color 0.3s ease;
+.city-list-container {
+  background-color: #202B3B;
+  padding: 20px;
+  border-radius: 10px;
+  max-height: 10000vh;
+  width: 85vw;
+  margin: 2vh 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: auto;
+}
+
+.city-list-container h1 {
+  text-align: center;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+.city-list-container ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.city-list-container li {
+
+  background-color: #0B131E;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 18px;
+  font-family: Arial, sans-serif;
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+.city-list-container li:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.search-city {
+  background-color: #202B3B;
+  border-radius: 10px;
+  color: white;
+  padding: 10px 15px;
+  width: 80vw;
+  background-color: #202B3B;
+  border: none;
+  height: 3vh;
+  border-radius: 10px;
+  font-family: "Roboto Flex",sans-serif;
+}
+
+.search-bar input:focus{
+    outline: none;
+}
+.search-bar input::placeholder{
+    color: white;
+}
+p{
+    color: aliceblue;
+}
+@media screen and (max-width: 576px) {
+  .city-list-container {
+    margin: 2vh 2vw;
   }
-  
-  .city-list-container li:hover {
-    background-color: #007bff;
-    color: #fff;
-  }
-  @media screen and (max-width: 576px) {
-    .city-list-container {
-      margin: 2vh 2vw;
-    }
-  }
+}
