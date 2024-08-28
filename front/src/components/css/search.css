@@ -37,3 +37,14 @@ p{
 .search-bar ul{
     list-style: none;
 }
+@media  screen and (max-width:576px) {
+    .search-bar{
+        position: absolute;
+        top: 10vh;
+        left: 10vw;
+
+    }
+    .search-bar input{
+        width: 70vw;
+    }
+}

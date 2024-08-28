@@ -20,4 +20,11 @@ nav .svgt{
     width: 1.5vw;
     margin: auto;
 }
-
+@media  screen and (max-width:576px) {
+    nav{
+        margin: 1vh 2vw 0;
+        flex-direction: row;
+        height: 5vh;
+        width: 95vw;
+    }
+}

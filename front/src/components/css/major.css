@@ -167,3 +167,106 @@ h4{
     color: gray;
     margin: 0;
 }
+@media screen and (max-width: 576px) {
+
+    .main-container {
+        width: 90vw;
+        height: auto;
+        flex-direction: row;
+        padding: 10px;
+        margin: 10vh 1vw 0;
+    }
+
+    .lft, .rgt {
+        width: 50%;
+    }
+
+    .degree {
+        font-size: 2rem;
+    }
+
+    .rgt img {
+        width: 70%;
+        margin: 10px 0;
+    }
+
+    .middle-container {
+        width: 90vw;
+        height: auto;
+        padding: 10px;
+        margin: 2vh 2vw;
+    }
+
+    .middle-container p {
+        font-size: 0.8rem;
+    }
+
+    .forecast {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .forecast-item {
+        margin-bottom: 10px;
+    }
+
+    .forecast-item .cvalue {
+        font-size: 1rem;
+    }
+
+    .last-container {
+        width: 90vw;
+        height: auto;
+        padding: 10px;
+        margin: 2vh 2vw;
+    }
+
+    .last-container p {
+        font-size: 0.8rem;
+    }
+
+    .wind {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .wind-item {
+        width: 80%;
+        margin-bottom: 10px;
+        display: block;
+    }
+
+    .wind-item .icon {
+        margin:  0 auto;
+    }
+
+    .wind-item .icon-content {
+        width: auto;
+    }
+
+    .sidebar {
+        width: 90vw;
+        height: auto;
+        margin: 2vh 1vw 0;
+        padding: 15px;
+    }
+
+    .week-unit {
+        flex-direction: row;
+        margin: 0 auto;
+        align-items: flex-start;
+        width: 80vw;
+    }
+
+    .week-unit .condition {
+        width: 50%;
+    }
+
+    .week-unit hr {
+        width: 100%;
+    }
+
+    h4 {
+        font-size: 1rem;
+    }
+}
