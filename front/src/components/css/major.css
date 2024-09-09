@@ -128,7 +128,7 @@ body{
     background-color: #202B3B;
     margin: 5vh 0 0 4vw;
     color: white;
-    padding: 20px;
+    padding: 20px 40px;
 }
 
 .sidebar p {
@@ -153,7 +153,9 @@ body{
     width: 8vw;
     height: 1vh;
 }
-
+.week-unit img{
+    width: 18%;
+}
 .week-unit hr {
     text-align: center;
     width: 22vw;

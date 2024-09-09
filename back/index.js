@@ -30,6 +30,16 @@ router.post('/forecast', async (req,res)=>{
     console.log("Forecast API success")
     res.send(data)
 });
+router.post('/dayforecast', async (req,res)=>{
+    const apikey2="c3d594028bf14690befeefa4b91972cf"; 
+    const city=req.query.city;
+    console.log(city);
+    const url="https://api.weatherbit.io/v2.0/forecast/daily?key=c3d594028bf14690befeefa4b91972cf&city="+city;
+    const response = await fetch(url);
+    const data = await response.json();
+    console.log("Forecast API success")
+    res.send(data)
+});
 router.listen(8000,(req,res)=>{
     console.log("Server is live at 8000");
     

@@ -14,6 +14,7 @@ function App() {
     const [city,setCity]=useState("Chennai")
     const [weatherData, setWeatherData] = useState("");
     const [forecastData, setForecastData] = useState("");
+    const [dayForecast,setDayForecast]=useState('');
     useEffect(() => {
         axios.post(`http://localhost:8000/?city=${city}`)
             .then(response => {
@@ -22,6 +23,10 @@ function App() {
         axios.post(`http://localhost:8000/forecast?city=${city}`)
             .then(response => {
                 setForecastData(response.data)
+            })
+        axios.post(`http://localhost:8000/dayforecast?city=${city}`)
+            .then(response => {
+                setDayForecast(response.data)
             })
     }, [city])
     return (
@@ -39,7 +44,7 @@ function App() {
                         <Search setWeatherData={setWeatherData} setForecastData={setForecastData} setCity={setCity}/>
                         <Navbar setWeatherData={setWeatherData}setCity={setCity} />
                         <Major weatherData={weatherData} forecastData={forecastData}setCity={setCity} />       
-                        <Sidebar forecastData={forecastData} />
+                        <Sidebar forecastData={forecastData} dayForecast={dayForecast} />
                     </div>
                 } />
                 </Routes>
