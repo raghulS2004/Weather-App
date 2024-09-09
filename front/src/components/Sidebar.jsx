@@ -19,18 +19,18 @@ function Sidebar({ dayForecast }) {
         <div className="week-unit">
           <p>Today</p>
           <img
-            src={`https://www.weatherbit.io/static/img/icons/${dayForecast?.data[0]?.weather?.icon}.png`}
+            src={`https://www.weatherbit.io/static/img/icons/${dayForecast?.data?.[0]?.weather?.icon}.png`}
             alt="Weather Icon"
           />
           <p className="condition">
-            {(dayForecast?.data[0]?.weather?.description)}
+            {(dayForecast?.data?.[0]?.weather?.description)}
           </p>
           <p>
-            {dayForecast?.data[0]?.max_temp}°C / {dayForecast?.data[0]?.min_temp}°C
+            {dayForecast?.data?.[0]?.max_temp}°C / {dayForecast?.data?.[0]?.min_temp}°C
           </p>
         </div>
         <hr />
-        {dayForecast.data.slice(1, 7).map((item, index) => (
+        {dayForecast?.data?.slice(1, 7).map((item, index) => (
           <div key={index}>
             <div className="week-unit">
               <p>{new Date(item.datetime).toLocaleDateString("en-US", { weekday: 'long' })}</p>
