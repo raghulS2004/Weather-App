@@ -12,7 +12,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 app.use(cors({
-  origin: ['http://localhost:3000', 'https://your-frontend.vercel.app'], // include deployed frontend here
+  origin: [
+    'http://localhost:3000', // for local testing
+    'https://weather-dfio9vqxh-raghuls-projects-bf0226ce.vercel.app',
+    'https://weather-app-alpha-five-11.vercel.app'
+  ],
   credentials: true
 }));
 
