@@ -159,14 +159,3 @@ MIT License. Feel free to use and improve this project!
 
 ```
 
----
-
-## ✅ Next Steps (Optional Enhancements)
-
-- Add city autocomplete suggestions
-- Support for geolocation
-- Display weather icons for day/night
-- Improve loading states and error handling
-
-Let me know if you want a Markdown file for GitHub directly, or if you'd like me to create a `README.md` file and push it to your repo.
-```
