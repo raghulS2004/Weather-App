@@ -16,19 +16,19 @@ function App() {
     const [forecastData, setForecastData] = useState("");
     const [dayForecast,setDayForecast]=useState('');
     useEffect(() => {
-        axios.post(`http://localhost:8000/?city=${city}`)
-            .then(response => {
-                setWeatherData(response.data)
-            })
-        axios.post(`http://localhost:8000/forecast?city=${city}`)
-            .then(response => {
-                setForecastData(response.data)
-            })
-        axios.post(`http://localhost:8000/dayforecast?city=${city}`)
-            .then(response => {
-                setDayForecast(response.data)
-            })
-    }, [city])
+    const baseURL = process.env.REACT_APP_API_URL;
+    axios.post(`${baseURL}/?city=${city}`, { withCredentials: true })
+        .then(response => setWeatherData(response.data))
+        .catch(err => console.error("Weather data error:", err));
+
+    axios.post(`${baseURL}/forecast?city=${city}`, { withCredentials: true })
+        .then(response => setForecastData(response.data))
+        .catch(err => console.error("Forecast error:", err));
+
+    axios.post(`${baseURL}/dayforecast?city=${city}`, { withCredentials: true })
+        .then(response => setDayForecast(response.data))
+        .catch(err => console.error("Day forecast error:", err));
+}, [city]);
     return (
         <div>
             <Router>
