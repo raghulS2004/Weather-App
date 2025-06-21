@@ -1,46 +1,85 @@
-const express=require('express')
-const router=express();
+// back/index.js
+const express = require('express');
 const cors = require('cors');
 const fetch = require('node-fetch');
-const bodyParser = require("body-parser");
-router.use(bodyParser.urlencoded({ extended: true }));
-router.use(bodyParser.json()); 
-router.use(cors({
-    origin: 'http://localhost:3000',
-    credentials: true
+const bodyParser = require('body-parser');
+require('dotenv').config();
+
+const app = express();
+
+// Middleware
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+app.use(cors({
+  origin: ['http://localhost:3000', 'https://your-frontend.vercel.app'], // include deployed frontend here
+  credentials: true
 }));
-router.post('/', async (req, res) => {
-    const apiKey = "a4883c990c6327b02edd2edb3a12a544";
-    const city = req.query.city;
-    console.log(city);
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
+
+// ----------------------------
+// Route: Current Weather (OpenWeatherMap)
+// ----------------------------
+app.post('/', async (req, res) => {
+  const city = req.body.city;
+  const apiKey = process.env.OPENWEATHER_API_KEY;
+
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
+
+  try {
     const response = await fetch(url);
     const data = await response.json();
-    console.log("Weather API success")
+    console.log("✅ OpenWeather success for:", city);
     res.send(data);
+  } catch (err) {
+    console.error("OpenWeather error:", err);
+    res.status(500).send({ error: "Failed to fetch current weather." });
+  }
 });
 
-router.post('/forecast', async (req,res)=>{
-    const apikey1="d7721ac41b854df2a3c151524252106"; 
-    const city=req.query.city;
-    console.log(city);
-    const url="http://api.weatherapi.com/v1/forecast.json?key=755b0c53c74449b5a0c82746242608&aqi=yes&days=7&q="+city;
+// ----------------------------
+// Route: Weekly Forecast (WeatherAPI)
+// ----------------------------
+app.post('/forecast', async (req, res) => {
+  const city = req.body.city;
+  const apikey1 = process.env.WEATHERAPI_KEY;
+
+  const url = `http://api.weatherapi.com/v1/forecast.json?key=${apikey1}&q=${city}&days=7&aqi=yes`;
+
+  try {
     const response = await fetch(url);
     const data = await response.json();
-    console.log("Forecast API success")
-    res.send(data)
+    console.log("✅ WeatherAPI success for:", city);
+    res.send(data);
+  } catch (err) {
+    console.error("WeatherAPI error:", err);
+    res.status(500).send({ error: "Failed to fetch forecast." });
+  }
 });
-router.post('/dayforecast', async (req,res)=>{
-    const apikey2="b8260559b7a946fd96edc80e9d0651bc"; 
-    const city=req.query.city;
-    console.log(city);
-    const url="https://api.weatherbit.io/v2.0/forecast/daily?key=c3d594028bf14690befeefa4b91972cf&city="+city;
+
+// ----------------------------
+// Route: Daily Forecast (Weatherbit)
+// ----------------------------
+app.post('/dayforecast', async (req, res) => {
+  const city = req.body.city;
+  const apikey2 = process.env.WEATHERBIT_KEY;
+
+  const url = `https://api.weatherbit.io/v2.0/forecast/daily?key=${apikey2}&city=${city}`;
+
+  try {
     const response = await fetch(url);
     const data = await response.json();
-    console.log("Forecast API success")
-    res.send(data)
+    console.log("✅ Weatherbit success for:", city);
+    res.send(data);
+  } catch (err) {
+    console.error("Weatherbit error:", err);
+    res.status(500).send({ error: "Failed to fetch daily forecast." });
+  }
 });
-router.listen(8000,(req,res)=>{
-    console.log("Server is live at 8000");
-    
-})
+
+// ----------------------------
+// Start the server
+// ----------------------------
+const PORT = process.env.PORT || 8000;
+app.listen(PORT, () => {
+  console.log(`🚀 Server is live at http://localhost:${PORT}`);
+});
