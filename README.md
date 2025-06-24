@@ -1,8 +1,4 @@
-Here's a complete `README.md` file you can use for your MERN Weather App, including deployment links, setup instructions, API usage, and environment configuration:
 
----
-
-```markdown
 # 🌦️ MERN Weather App
 
 A full-stack weather forecast application built with the MERN stack (MongoDB, Express.js, React.js, Node.js) that displays current weather, hourly, and weekly forecasts using data from OpenWeather, WeatherAPI, and Weatherbit.
